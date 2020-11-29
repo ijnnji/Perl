@@ -1,8 +1,9 @@
 # Perl
-A simple web application with :<br>
+A simple application<br>
 <ul>
-  <li>JSON config file</li>
-  <li>Logging</li>
-  <li>DB Connection</li>
+  <li>Web application examples/li>
+    <ul>
+      <li>this_program</li>
+    <ul>
 </ul> 
-This is just a nice starting place for a new application. :)<br>
+
