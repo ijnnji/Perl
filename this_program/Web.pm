@@ -3,11 +3,7 @@ use Moose;
 use Data::Dumper;
 use Plack::Request;
 use base 'Plack::Component';
-use Date::Manip;
-use HTTP::Parser;
-use Encode;
 use DBI;
-use JSON;
 
 has 'log' => ( is => 'ro', isa => 'Log::Log4perl::Logger', required => 1 );
 has 'conf' => ( is => 'ro', isa => 'Config::JSON', required => 1 );
