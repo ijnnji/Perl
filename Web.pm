@@ -67,14 +67,14 @@ sub call {
       $ret = Dumper($env);
     }
     elsif ($req->query_parameters->{show} eq 'self'){
-      $res->content_type('text/plain');
-      $ret = Dumper($self);
+    	$res->content_type('text/plain');
+      	$ret = Dumper($self);
     }
 		else {
 			$res->content_type('text/html');
 			$ret  = '<a href="./?show=req">req</a><br>';
-      $ret .= '<a href="./?show=env">env</a><br>';
-      $ret .= '<a href="./?show=self">self</a><br>';
+      			$ret .= '<a href="./?show=env">env</a><br>';
+      			$ret .= '<a href="./?show=self">self</a><br>';
 		}
 	};
 	if ($@){
@@ -89,4 +89,3 @@ sub call {
 1;
 
 __END__
-
