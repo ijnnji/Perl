@@ -9,9 +9,9 @@ use FindBin;
 use lib "$FindBin::Bin/";
 use Web;
 
-my $config_file = '/etc/test.conf';
-if ($ENV{TEST_CONF}){
-	$config_file = $ENV{TEST_CONF};
+my $config_file = '/etc/web.conf';
+if ($ENV{WEB_CONF}){
+	$config_file = $ENV{WEB_CONF};
 }
 
 my $conf = new Config::JSON ( $config_file ) or die("Unable to open config file");
@@ -31,10 +31,10 @@ if ($conf->get('logdir')){
 		log4perl.appender.File.layout = Log::Log4perl::Layout::PatternLayout
 		log4perl.appender.File.layout.ConversionPattern = * %p [%d] %F (%L) %M %P %m%n
 		log4perl.filter.ScreenLevel               = Log::Log4perl::Filter::LevelRange
-  	log4perl.filter.ScreenLevel.LevelMin  = INFO
-  	log4perl.filter.ScreenLevel.LevelMax  = ERROR
-  	log4perl.filter.ScreenLevel.AcceptOnMatch = true
-  	log4perl.appender.Screen         = Log::Log4perl::Appender::Screen
+  		log4perl.filter.ScreenLevel.LevelMin  = INFO
+  		log4perl.filter.ScreenLevel.LevelMax  = ERROR
+  		log4perl.filter.ScreenLevel.AcceptOnMatch = true
+  		log4perl.appender.Screen         = Log::Log4perl::Appender::Screen
 		log4perl.appender.Screen.Filter = ScreenLevel 
 		log4perl.appender.Screen.stderr  = 1
 		log4perl.appender.Screen.layout = Log::Log4perl::Layout::PatternLayout
@@ -45,10 +45,10 @@ else {
 	$log_conf = qq(
 		log4perl.category.Web       = $debug_level, Screen
 		log4perl.filter.ScreenLevel               = Log::Log4perl::Filter::LevelRange
-  	log4perl.filter.ScreenLevel.LevelMin  = TRACE
-  	log4perl.filter.ScreenLevel.LevelMax  = ERROR
-  	log4perl.filter.ScreenLevel.AcceptOnMatch = true
-  	log4perl.appender.Screen         = Log::Log4perl::Appender::Screen
+  		log4perl.filter.ScreenLevel.LevelMin  = TRACE
+  		log4perl.filter.ScreenLevel.LevelMax  = ERROR
+  		log4perl.filter.ScreenLevel.AcceptOnMatch = true
+  	 	log4perl.appender.Screen         = Log::Log4perl::Appender::Screen
 		log4perl.appender.Screen.Filter = ScreenLevel 
 		log4perl.appender.Screen.stderr  = 1
 		log4perl.appender.Screen.layout = Log::Log4perl::Layout::PatternLayout
