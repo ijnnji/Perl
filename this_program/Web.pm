@@ -9,28 +9,6 @@ has 'log' => ( is => 'ro', isa => 'Log::Log4perl::Logger', required => 1 );
 has 'conf' => ( is => 'ro', isa => 'Config::JSON', required => 1 );
 has 'db' => ( is => 'rw', isa => 'Object', required => 0 );
 
-#our %Query_params = (
-#	srcip => qr/^(?<not>\!?)(?<srcip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/,
-#	dstip => qr/^(?<not>\!?)(?<dstip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})$/,
-#	srcport => qr/^(?<not>\!?)(?<srcport>\d{1,5})$/,
-#	dstport => qr/^(?<not>\!?)(?<dstport>\d{1,5})$/,
-#	start => qr/(?<start>.+)/, # start/end will be run through a parser for sanitization
-#	end => qr/(?<end>.+)/,
-#	offset => qr/^(?<offset>\d+)$/,
-#	limit => qr/^(?<limit>\d{1,5})$/,
-#	pcre => qr/(?<pcre>.+)/,
-#	as_hex => qr/^(?<as_hex>1)$/,
-#	raw => qr/^(?<raw>1)$/,
-#	sort => qr/^(?<sort>1)$/,
-#	direction => qr/^(?<direction>[cs])$/,
-#	quiet => qr/^(?<quiet>1)$/,
-#	reason => qr/^(?<not>\!?)(?<reason>[crteli])$/,
-#	filetype => qr/^(?<not>\!?)(?<filetype>[\w\s]+)/,
-#	submit => qr/^(?<submit>[\w\s]+)/,
-#	oid => qr/^(?<oid>\d+\-\d+\-\d+\-\d+)$/,
-#	as_json => qr/^(?<as_json>1)$/,
-#);
-
 sub BUILD {
 	my ($self, $params) = @_;
 	
