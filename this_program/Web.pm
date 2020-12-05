@@ -54,19 +54,19 @@ sub call {
 	my $ret;
 
 	eval {
-    if ($req->query_parameters->{show} eq 'req'){
+		if ($req->query_parameters->{show} eq 'req'){
 			$res->content_type('text/plain');
 			$ret = Dumper($req);
 		}
-      elsif ($req->query_parameters->{show} eq 'env'){
-      $res->content_type('text/plain');
-      $ret = Dumper($env);
-    }
-    elsif ($req->query_parameters->{show} eq 'self'){
-    	$res->content_type('text/plain');
-      	$ret = Dumper($self);
-    }
-		else {
+      		elsif ($req->query_parameters->{show} eq 'env'){
+      			$res->content_type('text/plain');
+      			$ret = Dumper($env);
+    		}
+    		elsif ($req->query_parameters->{show} eq 'self'){
+    			$res->content_type('text/plain');
+      			$ret = Dumper($self);
+    		}
+    		else {
 			$res->content_type('text/html');
 			$ret  = '<a href="./?show=req">req</a><br>';
       			$ret .= '<a href="./?show=env">env</a><br>';
